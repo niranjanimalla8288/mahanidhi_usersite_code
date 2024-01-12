@@ -1,0 +1,112 @@
+<app-mainnavbar></app-mainnavbar>
+<div class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-6">
+                <h5 class="advanced_text">Signup</h5>
+            </div>
+            <div class="col-md-5 col-6">
+                <div class="home_search">
+                    <a routerLink="#" id="link_color">Home</a> / Signup
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <div class="card">
+        <div class="row">
+            <div class="col-md-6 space_of_card">
+                <h4 class="register">Register your Account</h4>
+                <hr>
+                <hr>
+                <form (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">First Name <span class="star">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" [(ngModel)]="businessModel.firstName"
+                                name="firstName" placeholder="First Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">Last Name <span class="star">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" [(ngModel)]="businessModel.lastName"
+                                name="firstName" placeholder="Last Name">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">Email <span class="star">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="useremail" [(ngModel)]="businessModel.email"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">Company Name <span class="star">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="companyName" placeholder="Company Name"
+                                [(ngModel)]="businessModel.companyName">
+                        </div>
+                    </div>
+
+                    <!-- selecter -->
+
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">Phone Number </label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number"
+                                [(ngModel)]="businessModel.phoneNumber">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-3 text_form">Address</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" name="address" placeholder="Address"
+                                [(ngModel)]="businessModel.address">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="offset-sm-3 col-sm-9">
+                        <div class="checkbox">
+                            <label> <input type="checkbox"><span class="text_form1">I've read the Terms and
+                                    Condition</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <br>
+                        <!-- <p class="offset-sm-3 col-sm-9">4*9=?</p> -->
+                    </div>
+                    <!-- <div class="col-md-8 offset-sm-3 col-sm-9">  
+                                <input class="form-control space_div" type="text" name="Phone" value="" >
+                            </div> -->
+
+                    <div class="form-group space_of_bottum row">
+                        <div class="offset-sm-3 col-sm-9">
+                            <button type="submit" class="btn btn-sm btn-success ripple">Register</button>&nbsp;
+                            <button type="reset" class="btn btn-sm btn-white">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 space_of_column">
+                <h4 class="login_page">Cookie Policy</h4>
+                <hr>
+                <p class="login_page_color">All Cookies Policies will include the same basic information. An adequate
+                    and compliant policy of this kind will inform users of the following:</p>
+                <ol class="login_page_color">
+                    <li>That cookies are in use on your website</li>
+                    <li>What cookies are</li>
+                    <li>What kind of cookies are in use (by you and/or third parties)</li>
+                    <li>How and why you (and/or third parties) are using the cookies</li>
+                    <li>How a user can opt out of having cookies placed on her device(s)</li>
+                </ol>
+                <p class="login_page_color">Most policies on this matter start by letting users know that cookies are in
+                    use, and telling them what cookies are. Simple, easy-to-understand language should be used here so
+                    that everyone is able to understand what the policy is saying.</p>
+            </div>
+        </div>
+    </div>
+    <br>

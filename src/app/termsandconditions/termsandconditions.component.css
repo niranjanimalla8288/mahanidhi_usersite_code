@@ -1,0 +1,21 @@
+.container-fluid {
+    margin-top: -300px;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+    color: white;
+}
+
+hr {
+    background-image: linear-gradient(to right, red, yellow);
+}
+
+ul {
+    background-color: rgba(0, 0, 0, 0.281);
+    padding: 50px;
+}

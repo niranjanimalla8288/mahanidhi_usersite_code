@@ -1,0 +1,105 @@
+.background{
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+    height: 100px;
+}
+body{
+    background-color: #f6f6f6;
+    font-size: 14px;
+    color: #8c8c8c;
+    font-weight: 400;
+}
+.advanced_text{
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 35px;
+    color: #F9F9F9;
+}
+.home_search {
+    position: relative;
+    float: right;
+    width: auto;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 35px;
+
+}
+
+/* login to your account css */
+.card{
+    margin-top: 10px;
+    height: auto;
+    border-width: 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.login_page{
+    font-weight: 600;
+    font-size: 16px;
+    color: #8c8c8c;
+    margin-top: 10px;
+}
+.space_of_card{
+    padding-left: 40px;
+}
+.login_page_color{
+    color: #8c8c8c;
+}
+.space_of_column{
+    width: 47%;
+}
+.form-group{
+    margin-top: 20px;
+}
+.checkbox{
+    margin-top: 20px;
+}
+.btn-success{
+    background-color: #7cb342;
+    color: #fff;
+    border-width: 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 70px;
+}
+.btn-white{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-width: 0px;
+    width: 70px;
+    margin-left: 5px;
+}
+.space_of_black{
+    margin-top: 20px;
+}
+.black{
+    text-decoration: none;
+    font-size: 16px;
+    color: #8c8c8c;
+}
+
+@media(max-width:430px){
+   hr{
+    width: 97%;
+   }
+   .form-control{
+    width: 95%;
+    align-items: center;
+   }
+   .card{
+    background-color: white;
+    box-shadow: none;
+}
+.space_of_black{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    width: 80%;
+}
+.space_of_column{
+    width: 97%;
+    font-size: 16px;
+    padding: 30px;
+}
+.card{
+    height: auto;
+}
+
+}

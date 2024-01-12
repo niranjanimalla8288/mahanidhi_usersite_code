@@ -1,0 +1,124 @@
+.background{
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+    height: 100px;
+}
+.advanced_text{
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 35px;
+    color: #F9F9F9;
+}
+.home_search {
+    position: relative;
+    float: right;
+    width: auto;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 35px;
+
+}
+#link_color{
+    color: white;
+}
+.all_packages{
+    height: 630px;
+    margin-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0px;
+    border-width: 0px;
+    margin-bottom: 20px;
+}
+.block_col{
+    margin-left: 0px;
+}
+.icon_text {
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 30px;
+    padding-left: 40px;
+
+
+}
+hr{
+    width: 93%;
+    margin-left: 35px;
+    
+}
+
+.block {
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-bottom: 25px;
+    background: #FBFBFB;
+    margin-left: 30px;
+    width: 260px;
+}
+.header {
+    text-align: center;
+    border-bottom: 1px rgba(0,0,0,0.05) solid;
+    padding: 20px 25px;
+    border-radius: 3px 3px 0 0;
+   
+    background: #1E8E7E !important;
+    
+}
+.header h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 5px;
+    text-transform: capitalize;
+}
+.block h4 {
+    color: #fff;
+}
+.category-list {
+    padding: 0px 25px 10px 25px;
+}
+.pull-right {
+    float: right;
+}
+li {
+    display: block;
+    font-size: 14px;
+    border-bottom: 1px solid #F4F7F9;
+    padding: 10px 0;
+}
+.full_block{
+    height: 210px;
+}
+.fa-money{
+    color: red;
+}
+
+.row{
+    padding-left: 0px;
+}
+
+@media(max-width:430px){
+    hr{
+        width: 80%;
+        align-items: center;
+        
+    }
+    .block{
+        margin: auto;
+    }
+    .all_packages{
+        height: 1250px;
+    }
+    .full_block{
+        height: auto;
+    }
+}
+@media(max-width:770px){
+    .block2{
+       margin-left: 80px;
+    }
+    .block3{
+        margin-left: 120px;
+     }
+    .block {
+        width: 200px;
+    }
+}

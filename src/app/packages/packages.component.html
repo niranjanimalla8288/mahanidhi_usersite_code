@@ -1,0 +1,26 @@
+<app-mainnavbar></app-mainnavbar>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" *ngFor="let plandata of planDetails">
+            <div id="pricing">
+                <div class="price_card charlie">
+                    <div class="header"><br>
+                        <span class="price">{{plandata.cost}}</span>
+                        <h1 class="name">{{plandata.name | uppercase}}</h1>
+                    </div>
+                    <ul class="features">
+                        <li>Duration In Month: {{plandata.durationInMonths}}</li>
+                        <li>Position Listing: {{plandata.positionInListing}} </li>
+                        <li>Service Description: {{plandata.serviceDescription | titlecase}}</li>
+                    </ul>
+                    <button>Add to packages</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<br><br>

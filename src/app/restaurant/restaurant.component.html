@@ -1,0 +1,91 @@
+<app-mainnavbar></app-mainnavbar>
+
+<div class="background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 col-6">
+        <h5 class="advanced_text">Real Estate</h5>
+      </div>
+      <div class="col-md-5 col-6">
+        <div class="home_search">
+          <a routerLink="#" id="link_color">Home</a> / Real Estate
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-5 col-6">
+                <h3>
+                  <span><i class="fa fa-clock-o space_of_icon icon_color" style="font-size:20px"
+                      aria-hidden="true"></i><span class="text_of_feature"> <span class="recent_posts"> Recent
+                        Posts</span></span></span>
+                  <div class="pull-right featured-list-switcher"></div>
+                </h3>
+              </div>
+              <div class="col-md-7 col-6">
+                <ul class="nav" id="ex1" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link active top-contant" id="ex22-tab-1" data-bs-toggle="tab" href="#ex22-tabs-1"
+                      role="tab" aria-controls="ex22-tabs-1" aria-selected="true"><i class="fa fa-th icon_color"
+                        aria-hidden="true" style="font-size:15px"></i></a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <a class="nav-link top-contant" id="ex23-tab-2" data-bs-toggle="tab" href="#ex23-tabs-2" role="tab"
+                      aria-controls="ex23-tabs-2" aria-selected="false"><i class="fa fa-th-list icon_color"
+                        aria-hidden="true" style="font-size:15px"></i></a>
+                  </li>
+                </ul>
+              </div>
+              <hr>
+              <div class="tab-content" id="ex2-content">
+                <div class="tab-pane fade show active" id="ex22-tabs-1" role="tabpanel" aria-labelledby="ex22-tab-1">
+                  <div class="row">
+                    <div class="col-md-3" *ngFor="let category of categoryByServiceProvider">
+                      <a class="category_card">
+                        <div class="hide_and_card">
+                          <div [routerLink]="['/imgtopinfracompany',category.id]" class="card card_of_hide">
+                            <img src={{category.thumnailImagePath}} class="img_space">
+                            <br>
+                            <div class="infra_text_background">
+                              <h5 class="infra_text">Top Infra Company</h5>
+                              <h6 class="real_estate_text">{{category.businessName}}</h6>
+                            </div><br>
+                            <!-- <p class="hyderbad_text_hide">Hyderbad</p> -->
+                            <div class="space_of_icon_star stars_center">
+                              <i class="fa fa-star color_of_star_icon" aria-hidden="true" style="font-size:18"></i>
+                              <i class="fa fa-star color_of_star_icon" aria-hidden="true" style="font-size:18"></i>
+                              <i class="fa fa-star color_of_star_icon" aria-hidden="true" style="font-size:18"></i>
+                              <i class="fa fa-star color_of_star_icon" aria-hidden="true" style="font-size:18"></i>
+                              <i class="fa fa-star color_of_star_icon" aria-hidden="true" style="font-size:18"></i>
+                            </div>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-3">
+      <app-homepagesidecontaines></app-homepagesidecontaines>
+
+    </div>
+  </div>
+</div>

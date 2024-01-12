@@ -1,0 +1,177 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-5 col-6">
+                    <h3><span><i class="fa fa-bookmark" style="font-size:20px"></i><span class="text_of_feature">
+                                Featured Businesses</span></span>
+                        <div class="pull-right featured-list-switcher">
+                        </div>
+                    </h3>
+                </div>
+                <div class="col-md-7 col-6">
+                    <ul class="nav" id="ex1" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link active top-contant icon_space" id="ex2-tab-1" data-bs-toggle="tab"
+                                href="#ex2-tabs-1" role="tab" aria-controls="ex2-tabs-1" aria-selected="true"><i
+                                    class="fa fa-th icon_color" aria-hidden="true" style="font-size:15px"></i></a>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <a class="nav-link top-contant" id="ex2-tab-2" data-bs-toggle="tab" href="#ex2-tabs-2"
+                                role="tab" aria-controls="ex2-tabs-2" aria-selected="false"><i
+                                    class="fa fa-th-list icon_color" aria-hidden="true" style="font-size:15px"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+                <div class="tab-content" id="ex2-content">
+                    <div class="tab-pane fade show active" id="ex2-tabs-1" role="tabpanel" aria-labelledby="ex2-tab-1">
+                        <div class="col-md-12">
+                            <!-- <div class="background_post">
+                                <p class="post_space">No Post</p>
+                            </div> -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4" *ngFor="let categoryData of category ">
+                                <a class="card_link" [routerLink]="['/business-category',categoryData.id]">
+                                    <div class="card">
+                                        <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                            <div class="category-block">
+                                                <div class="header text-center">
+                                                    <a><i class="fa fa-home icon-bg-2"></i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <h5 class="real_text">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <div class="category_name">
+                                                            {{categoryData.name}}
+                                                        </div>
+                                                        <div>
+                                                            <!-- {{count.count}} -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </h5>
+
+
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <!-- secound_tab -->
+                    <!-- <div class="tab-pane fade" id="ex2-tabs-2" role="tabpanel" aria-labelledby="ex2-tab-2">
+                        <div class="col-md-12">
+                            <div class="background_post">
+                                <p class="post_space">No Post</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card">
+                                    <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                        <div class="category-block">
+                                            <div class="header text-center">
+                                                <a routerLink="#">
+                                                    <i class="fa fa-home icon-bg-2 text-center"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h5 class="real_text">
+                                            Real Estate(0)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card card_break">
+                                    <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                        <div class="category-block">
+                                            <div class="header text-center">
+                                                <a routerLink="#">
+                                                    <i class="fa fa-user icon-bg-3 icon_color_2"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h5 class="real_text">
+                                            Infra Developers (0)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card card_break">
+                                    <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                        <div class="category-block">
+                                            <div class="header text-center">
+                                                <a routerLink="#">
+                                                    <i class="fa fa-car icon-bg-4 icon_color_3"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h5 class="real_text">
+                                            Groceries (0)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="card space">
+                                    <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                        <div class="category-block">
+                                            <div class="header text-center">
+                                                <a routerLink="#">
+                                                    <i class="fa fa-home icon-bg-5 icon_color_4"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h5 class="real_text">
+                                            Hospitals (0)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="card space">
+                                    <div class="col-lg-4 offset-lg-0 col-md-6 col-sm-6 col-12 mx-auto mt-4">
+                                        <div class="category-block">
+                                            <div class="header">
+                                                <a routerLink="#">
+                                                    <i class="fa fa-home icon-bg-5 icon_color_5"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <h5 class="real_text">
+                                            Children Hospitals (0)
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

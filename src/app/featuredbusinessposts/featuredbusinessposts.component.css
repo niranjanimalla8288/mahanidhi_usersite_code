@@ -1,0 +1,103 @@
+.fa-bookmark {
+    color: #F6214B;
+}
+
+.text_of_feature {
+    color: #132e57;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.nav {
+    float: right;
+}
+
+.icon_color {
+    color: red;
+}
+
+.icon_color:active {
+    color: gray;
+}
+
+.background_post {
+    color: #0c5460;
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+}
+
+.post_space {
+    text-align: center;
+    padding-top: 2px;
+}
+
+.card {
+    border-width: 0px;
+    height: 100px;
+    border-radius: 0px;
+    margin-top: 20px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card_link {
+    text-decoration: none;
+}
+
+.category-block .header i {
+    margin-right: 6px;
+    color: #fff;
+    font-size: 13px;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    margin-bottom: 6px;
+    border-radius: 40px;
+    margin-left: 15px;
+}
+
+.category-block .header .icon-bg-2 {
+    background: #a676b8;
+    box-shadow: 0 0 0px 4px rgba(166, 118, 184, 0.35);
+}
+
+.real_text {
+    font-size: 16px;
+    text-align: center;
+    color: gray;
+}
+
+.icon_color_2 {
+    background: #fe7e17;
+    box-shadow: 0 0 0px 4px rgba(254, 126, 23, 0.35);
+}
+
+.icon_color_3 {
+    background: #EC3A56;
+    box-shadow: 0 0 0px 4px rgba(236, 58, 86, 0.35);
+}
+
+.space {
+    margin-top: 10px;
+}
+
+.icon_color_4 {
+    background: #1DBFFF;
+    box-shadow: 0 0 0px 4px rgba(29, 191, 255, 0.35);
+}
+
+.icon_color_5 {
+    background: #02d3a4;
+    box-shadow: 0 0 0px 4px rgba(2, 211, 164, 0.35);
+}
+
+.icon_space {
+    margin-right: -25px;
+}
+
+@media(max-width:430px) {
+    .card_break {
+        margin-top: 10px;
+    }
+}

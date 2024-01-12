@@ -1,0 +1,94 @@
+<app-mainnavbar></app-mainnavbar>
+
+<div class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7 col-6">
+                <h5 class="advanced_text">Alloffers</h5>
+            </div>
+            <div class="col-md-5 col-6">
+                <div class="home_search">
+                    <a routerLink="#" id="link_color">Home</a> / Alloffers
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="col-md-9 col-sm-12 col-12">
+            <div class="background_card">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="background_post">
+                            <p class="post_space">No Post</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <!-- <div class="container">
+    <div class="row"> -->
+            <!-- <div class="col-md-9"></div> -->
+            <div class="col-md-12">
+                <!-- search -->
+                <div class="space_of_icon search_space">
+                    <span><i class="fa fa-search icon_color" style="font-size:20px"></i>Search</span>
+                </div>
+                <!-- <hr class="small_hr"> -->
+                <!-- <div class="row"> -->
+                <div class="col-md-12 col-12">
+                    <div class="input-group">
+                        <input type="search" class="form-control space_of_icon" placeholder="Type something"
+                            aria-label="Search" aria-describedby="search-addon" />
+                        <button type="button" class="btn btn-outline search_bar_button"
+                            data-mdb-ripple-init>search</button>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <!-- search -->
+
+
+                <!-- top-business -->
+
+                <div class="space_of_border">
+                    <h6><i class="fa fa-building color space_of_icon icon_color"></i>&nbsp; Top Businesses</h6>
+                </div>
+                <!-- <hr class="small_line"> -->
+                <div class="col-md-12">
+
+                    <div class="card house_card" *ngFor="let sps of sp ">
+                        <a class="routing_link" [routerLink]="['/imgtopinfracompany',sps.id]">
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-6">
+                                    <img src="{{ sps.thumnailImagePath }}" class="img_house">
+                                </div>
+                                <div class="col-md-8 col-sm-8 col-6">
+                                    <div class="space_of_div">
+                                        <p class="top_infra_text">{{ sps.businessName }}</p>
+                                        <h6 class="city">City:{{getSPName(sps.cityId) }} </h6>
+                                        <div class="space_of_icon_star">
+                                            <ng-container *ngFor="let i of getRatingArray(sps.currentRating)">
+                                                <i class="fa fa-star cstar_icon active"></i>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+                <!-- 
+    top-business -->
+            </div>
+        </div>
+    </div>
+    <br><br>

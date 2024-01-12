@@ -1,0 +1,167 @@
+.background{
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+    height: 100px;
+}
+.advanced_text{
+    margin-bottom: 20px;
+    font-size: 20px;
+    margin-top: 35px;
+    color: #F9F9F9;
+}
+.home_search {
+    position: relative;
+    float: right;
+    width: auto;
+    font-size: 15px;
+    font-weight: bold;
+    color: #444;
+    margin-top: 35px;
+
+}
+#link_color{
+    color: white;
+}
+.background_card{
+    height: 500px;
+    margin: 20px 0px 30px 40px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-width: 0px;
+}
+.search_lenth{
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 20px;
+    border-top-right-radius: 0%;
+    border-bottom-right-radius: 0%;
+}
+.search_button{
+    margin-top: 20px;
+    background-color: #607D8B;
+    width: 100px;
+    color: #F9F9F9;
+    border-radius: 0%;
+}
+.row {
+    margin-right: 0px;
+}
+hr{
+    width: 95%;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+.small_line{
+    
+    margin-left: 0px;
+}
+.img_proffesional{
+    border-radius: 50%;
+   height: 100px;
+   margin-left: 15px;
+}
+.post{
+    font-weight: 600;
+    color: white;
+    border-width: 1px;
+    background-color: red;
+    width: 60px;
+    border-radius: 5px;
+    height: 30px;
+    margin-top: 20px;
+}
+.post_zero{
+    padding-left: 5px;
+    padding-top: 2px;
+}
+.icon_color{
+    color: rgb(97, 167, 224);
+    padding-right: 10px;
+}
+.space_of_icon{
+    margin-top: 20px;
+}
+.search_bar_button{
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+}
+.house_card{
+    height: 90px;
+    border-radius: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-width: 0px;
+}
+.house_card_1{
+    height: 100px;
+    border-radius: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-width: 0px;
+    background-color: white;
+}
+.color_of_star_icon{
+   color: #aaa;
+   margin-top: -50px;
+   
+}
+.space_of_icon_star{
+    margin-left: 10px;
+    margin-top: -8px;
+}
+.top_infra_text{
+    color:  #e2dfdf;
+    margin-top: 7px;
+    margin-left: 10px;
+}
+.city{
+    color:  #a19f9f;
+    margin-top: -15px;
+    margin-left: 10px;
+}
+.img_house{
+    width: 90px;
+    margin:15px;
+}
+.Hyderbad_text{
+    color: #c4c1c1;
+    margin-top: 5px;
+}
+.real_text{
+    color: #c4c1c1;
+    margin-top: 8px;
+}
+.space_of_text{
+    margin-top: 10px;
+}
+
+@media(max-width:430px){
+    hr{
+        margin-left: 15px;
+    }
+    .img_proffesional{
+       display: block;
+       margin-left: auto;
+       margin-right: auto;
+    }
+    .post{
+        margin-left: 43%;
+    }
+    .class_space{
+        margin-left: 10px;
+    }
+    .background_card{
+        height: auto;
+        margin-left: 0px;
+    }
+    .space_div_toplocation{
+        margin-left: 5px;
+    }
+    .house_card{
+        height: 120px;
+    }
+}
+@media(max-width:330px){
+    hr{
+        margin-left: 12px;
+    }
+    
+}

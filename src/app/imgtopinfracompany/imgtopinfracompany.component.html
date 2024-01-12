@@ -1,0 +1,366 @@
+<app-mainnavbar></app-mainnavbar>
+<div *ngIf="serviceProvider">
+    <div class="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-11">
+                    <h5 class="advanced_text">{{serviceProvider.businessName}}</h5>
+                    <span class="fa fa-check verified-icon"></span>
+                    <label class="verified-label">Verified</label>
+                    <label class="category-label"><a routerLink="/Restaurant">Real Estate</a></label>
+                </div>
+                <div class="col-md-2 col-1">
+                    <!-- <div class="home_search">
+                    <a routerLink="#" id="link_color">Home</a> / Advanced Search            
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-12">
+                <div class="card">
+                    <div class="space_of_div">
+                        <div class="black_background">
+                            <img src="{{serviceProvider.thumnailImagePath}}" alt="loading Img...." class="img_main">
+                        </div>
+                        <div class="line_bar"></div>
+                        <div class="space_background">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-clock-o clock-icon icon-bg-1"></i>
+                                        Added:</span>
+                                    <span class="span-right">{{serviceProvider.enrolledDate | date }} </span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-map-marker location-icon icon-bg-2"></i>
+                                        Location:</span>
+                                    <span class="span-right">
+                                        <a routerLink="#">City : {{getSPName(serviceProvider.cityId) }}</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space_background">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-money price-icon icon-bg-3"></i> Price
+                                        Range:</span>
+                                    <span class="span-right"> {{serviceProvider.priceRange}}</span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-envelope price-icon icon-bg-4"></i>
+                                        Email:</span>
+                                    <span class="span-right">
+                                        <a>{{serviceProvider.email}}</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space_background">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-link icon-bg-5"></i> Website:</span>
+                                    <span class="span-right"> <a href="#"
+                                            target="_blank">{{serviceProvider.websiteLink}}</a></span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-phone phone-icon icon-bg-6"></i>
+                                        Phone:</span>
+                                    <span class="span-right">
+                                        <a routerLink="#">{{serviceProvider.mobileNumber}}</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space_background">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-key bg-lblue icon-bg-7"></i> Founded:</span>
+                                    <span class="span-right"> {{serviceProvider.founded}}</span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-star price-icon icon-bg-2"></i>
+                                        Review:</span>
+                                    <span class="span-right"
+                                        *ngFor="let i of getRatingArray(serviceProvider.currentRating)">
+                                        <i class="fa fa-star cstar_icon active"></i>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space_background">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-eye view-icon icon-bg-4"></i> Views:</span>
+                                    <span class="span-right">{{ serviceProvider.views }}</span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-12">
+                                    <span class="span-left"><i class="fa fa-print view-icon icon-bg-4"></i>
+                                        Print:</span>
+                                    <span class="span-right">
+                                        <a target="_blank" routerLink="#"><i class="fa fa-print fa-lg"></i> Print</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="container mt-5">
+                            <div class="row">
+                                <ul class="nav nav-tabs" id="myTabs">
+                                    <div class="col-md-3 col-12">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="Details-tab" data-bs-toggle="tab"
+                                                href="#Details">Details</a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 col-12">
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="contact-tab" data-bs-toggle="tab"
+                                                href="#contact">contact</a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 col-12">
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="Review-tab" data-bs-toggle="tab"
+                                                href="#Review">Review</a>
+                                        </li>
+                                    </div>
+                                    <div class="col-md-3 col-12">
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="360view-tab" data-bs-toggle="tab"
+                                                href="#360view">360
+                                                view</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content mt-2">
+                                <div class="tab-pane fade show active" id="Details">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="detail-page-description">
+                                                Top Infra Company
+                                            </div>
+                                            <hr>
+                                            <div class="detail-page-description">
+                                                <h4 class="info-subtitle">
+                                                    <i class="fa fa-map-marker"></i>
+                                                    Location on Map
+                                                </h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="contact">
+                                    <div class="tab-pane active" id="p-nav-2">
+
+                                        <div class="single-property sp-agent">
+                                            <div class="row">
+
+                                                <div class="col-md-12 col-sm-12 col-12">
+
+
+                                                    <div class="table-responsive">
+                                                        <table class="table contact-table">
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>
+                                                                       
+                                                                    </th>
+                                                                    <td> <b><label class="user-name-detail">Admin
+                                                                                Admin</label></b></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Address</th>
+                                                                    <td>Suraram colony, Hyderbad, telangana 500006,
+                                                                        India</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Email</th>
+                                                                    <td>niranjan.exp@gmail.com</td>
+                                                                </tr>
+
+                                                                <tr>
+                                                                    <th>Phone</th>
+                                                                    <td>12545622</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th>Website</th>
+                                                                    <td>http://kittuhomlands.com</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="col-md-6 col-sm-12 col-12">
+                                                    <h5 class="text-black">Contact via email</h5>
+                                                    <div class="rs-enquiry">
+                                                        <div class="clearfix"></div>
+                                                        <span class="agent-email-form-holder">
+                                                            <form role="form" method="post" id="message-form"
+                                                                (ngSubmit)="onSubmit()">
+                                                                <input type="hidden" name="unique_id"
+                                                                    value="6566f876a895e">
+                                                                <input type="hidden" name="title"
+                                                                    value="Top Infra Company">
+                                                                <input type="hidden" name="url"
+                                                                    value="http://143.244.209.130/index.php/en/ads/6566f876a895e/Top-Infra-Company">
+                                                                <input type="hidden" name="to_email"
+                                                                    value="niranjan.exp@gmail.com">
+
+                                                                <div class="row">
+                                                                    <div class="col-md-4 col-sm-4">
+                                                                        <div class="form-group">
+                                                                            <input type="text" id="name"
+                                                                                [(ngModel)]="contact.name" name="name"
+                                                                                placeholder="Name"
+                                                                                class="form-control form-control-sm agent-form-answer-input">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-4">
+                                                                        <div class="form-group">
+                                                                            <input type="text" id="email"
+                                                                                [(ngModel)]="contact.email" name="email"
+                                                                                placeholder="Email"
+                                                                                class="form-control form-control-sm agent-form-answer-input">
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4 col-sm-4">
+                                                                        <div class="form-group">
+                                                                            <input type="text" id="phone"
+                                                                                [(ngModel)]="contact.phone" name="phone"
+                                                                                placeholder="Phone"
+                                                                                class="form-control form-control-sm agent-form-answer-input">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <input type="text" id="subject"
+                                                                        [(ngModel)]="contact.subject" name="subject"
+                                                                        placeholder="Subject"
+                                                                        class="form-control form-control-sm agent-form-answer-input">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <textarea rows="3" id="message"
+                                                                        [(ngModel)]="contact.message" name="message"
+                                                                        placeholder="Message"
+                                                                        class="form-control form-control-sm agent-form-answer-input"></textarea>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-3">
+                                                                        <span class="question">5 + 7 =
+                                                                            ?</span>
+                                                                        <input type="text" name="ans" value=""
+                                                                            class="form-control form-control-sm agent-form-answer-input">
+                                                                        <div class="clearfix"></div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+                                                                        <div class="checkbox">
+                                                                            <label>
+                                                                                <input type="checkbox"
+                                                                                    name="terms_conditon"
+                                                                                    id="terms_conditon">
+                                                                                I've read the <a target="_blank"
+                                                                                    href="http://143.244.209.130/index.php/en/show/terms">
+                                                                                    terms and
+                                                                                    conditions </a> </label>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="clear-top-margin"></div>
+                                                                <button class="btn btn-primary"
+                                                                    type="submit">Send</button> &nbsp; <button
+                                                                    class="btn btn-white" type="reset">Reset</button>
+                                                            </form>
+                                                        </span>
+                                                    </div>
+                                                </div>
+
+
+
+                                            </div>
+
+
+
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="Review">
+                                    <h4>Contact Content</h4>
+                                    <p>This is the content of the Contact tab.</p>
+                                </div>
+                                <div class="tab-pane fade" id="360view">
+                                    <h4>Contact Content</h4>
+                                    <p>This is the content of the Contact tab.</p>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-3 col-md-12 col-sm-12 col-12 sidebar-detail">
+                <div class="sidebar">
+                    <div class="s-widget">
+                        <h5><i class="fa fa-tags color"></i>&nbsp; Tags</h5>
+                        <div class="widget-content tags">
+                            <a class="label label-color" routerLink="#">infra</a>
+                            <a class="label label-color" routerLink="#"> developers</a>
+                            <a class="label label-color" routerLink="#"> real estae</a>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="s-widget">
+                        <i class="fa fa-flag color"></i>&nbsp; <a class="js-report" type="button" routerLink="#">Report
+                            Business</a>
+                    </div>
+                    <div class="s-widget">
+                        <i class="fa fa-hand-grab-o color"></i>&nbsp; <a class="js-claim" routerLink="#">Claim
+                            Business</a>
+                    </div>
+
+                    <div class="s-widget">
+                        <span id="mark-fav-msg"></span>
+                        <a class="js-mark-fav btn btn-warning btn-sm" routerLink="#">
+                            <i class="fa fa-bookmark color"></i>&nbsp;
+                            Mark favourite </a>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="s-widget">
+                        <!-- Heading -->
+                        <h5><i class="fa fa-folder color"></i>&nbsp; Featured posts</h5>
+                        <!-- Widgets Content -->
+                        <div class="widget-content hot-properties">
+                            <div class="alert alert-info">No Posts</div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="s-widget">
+                        <!-- Heading -->
+                        <h5><i class="fa fa-building color"></i>&nbsp; Similar Posts</h5>
+                        <!-- Widgets Content -->
+                        <div class="widget-content hot-properties">
+                            <div class="alert alert-info">No Posts</div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

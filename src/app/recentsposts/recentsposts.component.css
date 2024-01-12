@@ -1,0 +1,175 @@
+.icon_color {
+    color: red;
+}
+
+.recent_posts {
+    color: #132e57;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.icon_space {
+    margin-left: 30px;
+}
+
+.nav-link {
+    margin-right: -10px;
+}
+
+.fa-th {
+    margin-right: -20px;
+}
+
+.nav {
+    float: right;
+    /* border-bottom: 1px rgba(0,0,0,0.05) solid; */
+
+
+}
+
+.icon_color {
+    color: red;
+}
+
+.icon_color:active {
+    color: gray;
+}
+
+/* .hide_and_card{
+    margin-left: 40px;  
+} */
+.card_of_hide {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-width: 0px;
+    border-radius: 0px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+
+.infra_text_background {
+    background: #F8F9FA;
+}
+
+.infra_text {
+    color: orangered;
+    text-align: center;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+.real_estate_text {
+    text-align: center;
+}
+
+.hyderbad_text_hide {
+    text-align: center;
+}
+
+.color_of_star_icon {
+    color: #aaa;
+    margin-top: -50px;
+}
+
+.space_of_icon_star {
+    margin-left: 10px;
+    margin-top: -8px;
+}
+
+.stars_center {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.overZoomLink {
+    height: 130px;
+}
+
+.sec_tab_card {
+    border-radius: 0px;
+    border-width: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.sec_tab_img {
+    width: 100%;
+    margin: 10px;
+
+
+}
+
+.card img {
+    height: 100px;
+}
+
+/* sec_tab */
+
+.top_infra {
+    color: #8c8c8c;
+    font-size: 22px;
+}
+
+.stra_icon_space {
+    font-size: 14px;
+    color: #b8b8b8;
+}
+
+.inner_card {
+    margin-right: 10px;
+    background-color: #f6f6f6;
+    border-radius: 0px;
+    border-width: 0px;
+}
+
+.inner_card {
+    background-color: #f6f6f6;
+    margin-right: 10px;
+}
+
+.verified-icon {
+    color: #6EA722;
+    padding: 3px 5px 3px 1px;
+    font-size: 14px;
+}
+
+.bold {
+    color: #b9b9b9;
+    font-size: 15px;
+    margin-bottom: -3px;
+}
+
+.spcaed_on_icons {
+    padding: 10px;
+}
+
+img {
+    cursor: pointer;
+}
+
+.email {
+    text-decoration: none;
+    color: #b9b9b9;
+}
+
+.sec_top_company {
+    margin-top: 15px;
+    color: #b9b9b9;
+}
+
+@media(max-width:430px) {
+    .sec_tab_img {
+        margin: 0px;
+    }
+
+    .card_of_hide {
+        height: auto;
+    }
+
+    .spcaed_on_icons {
+        padding-left: 10px;
+    }
+}
+
+.recent_posts {
+    text-decoration: none;
+}

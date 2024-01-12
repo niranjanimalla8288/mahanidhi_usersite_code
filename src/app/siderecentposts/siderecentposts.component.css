@@ -1,0 +1,90 @@
+
+.row {
+    margin-right: 0px;
+}
+hr{
+    width: 95%;
+    text-align: center;
+    margin-left: 25px;
+    margin-top: 5px;
+}
+.small_line{
+    
+    margin-left: 0px;
+}
+.post_space{
+    padding-left: 20px;
+    padding-top: 2px;
+}
+.icon_color{
+    color: rgb(97, 167, 224);
+    padding-right: 10px;
+}
+.space_of_icon{
+    margin-top: 20px;
+}
+.search_bar_button{
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+}
+.img_house{
+    width: 90px;
+    margin:15px;
+}
+.Hyderbad_text{
+    color: #c4c1c1;
+    margin-top: 5px;
+}
+.top_infra_text{
+    color: #8c8c8c;
+    margin-top: 7px;
+    margin-left: 10px;
+    font-size: 14px;
+}
+.city{
+    color:  #a19f9f;
+    margin-top: -15px;
+    margin-left: 10px;
+    color: #8c8c8c;
+    font-size: 14px;
+}
+.house_card{
+    height: 90px;
+    border-radius: 0px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-width: 0px;
+    margin-top: 10px;
+}
+.color_of_star_icon{
+    color: #aaa;
+    margin-top: -50px;
+    padding-left: 2px;
+    font-size: 16px;
+ }
+ .space_of_icon_star{
+    margin-left: 10px;
+    margin-top: -8px;
+}
+
+.space_of_text{
+    margin-top: 10px;
+}
+.input-group{
+    margin-top: -25px;
+}
+
+@media(max-width:430px){
+    hr{
+        margin-left: 15px;
+    }
+    .house_card{
+        height: auto;
+    }
+}
+@media(max-width:330px){
+    hr{
+        margin-left: 12px;
+    }
+    
+}

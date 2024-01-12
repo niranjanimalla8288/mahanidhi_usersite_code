@@ -1,0 +1,19 @@
+.space_of_icon{
+    margin-top: 20px;
+}
+.search_bar_button{
+    background-color: green;
+    color: white;
+    margin-top: 20px;
+}
+.icon_color{
+    color: rgb(97, 167, 224);
+    padding-right: 10px;
+}
+.input-group{
+    margin-top: -25px;
+    width: 100%;
+}
+.small_hr{
+    margin-top: 4px;
+}
