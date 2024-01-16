@@ -1,14 +1,14 @@
 <div class="background_color">
   <div class="top-bar box-top-bar">
-    <div class="container">
+    <div class="container" *ngFor="let data of orgData">
       <!-- Contact starts -->
       <div class="tb-contact pull-left">
         <!-- Email -->
         <i class="fa fa-envelope color email_size"></i> &nbsp; <a routerLink="#"
-          class="web_mail">mahanidhileads@gmail.com</a>
+          class="web_mail">{{data.supportEmail}}</a>
         &nbsp;&nbsp;
         <!-- Phone -->
-        <i class="fa fa-phone color email_size"></i> &nbsp;<span class="phone_number"> +91 70931 35710</span>
+        <i class="fa fa-phone color email_size"></i> &nbsp;<span class="phone_number"> +91 {{data.contactNumber}}</span>
       </div>
       <!-- Contact ends -->
       <div class="tb-language dropdown pull-right">
@@ -34,7 +34,6 @@
       <div class="clearfix"></div>
     </div>
   </div>
-
 
 
 
@@ -130,5 +129,14 @@
         </div>
       </div>
     </nav>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="add_images">
+          <!-- <h1>{{localStorageStateId}}</h1> -->
+        </div>
+      </div>
+    </div>
   </div>
 </div>

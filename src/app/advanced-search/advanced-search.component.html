@@ -1,5 +1,4 @@
 <app-mainnavbar></app-mainnavbar>
-
 <div class="background">
   <div class="container">
     <div class="row">
@@ -14,7 +13,6 @@
     </div>
   </div>
 </div>
-
 <div class="container">
   <div class="row">
     <div class="col-md-3 col-sm-4 col-12">
@@ -82,7 +80,7 @@
               <div class="col-md-5 col-6">
                 <h3>
                   <span><i class="fa fa-clock-o space_of_icon icon_color" style="font-size:20px"
-                      aria-hidden="true"></i><span class="text_of_feature"> <span class="recent_posts"> Recent
+                      aria-hidden="true"></i><span class="text_of_feature"> <span class="recent_posts">
                         Posts</span></span></span>
                   <div class="pull-right featured-list-switcher"></div>
                 </h3>
@@ -105,30 +103,41 @@
               <div class="tab-content" id="ex2-content">
                 <div class="tab-pane fade show active" id="ex22-tabs-1" role="tabpanel" aria-labelledby="ex22-tab-1">
                   <div class="row">
-                    <div class="col-md-3 col-sm-6 col-6" *ngFor="let SP of SPdatas">
-                      <a class="link_tag" [routerLink]="['/imgtopinfracompany',SP.id]">
-                        <div class="hide_and_card">
-                          <div class="card card_of_hide">
-                            <img src="{{SP.thumnailImagePath}}" class="img_space">
-                            <div class="infra_text_background">
-                              <h5 class="infra_text">{{ SP.businessName }}</h5>
-                              <h6 class="real_estate_text"></h6>
+                    <div class="col-md-9 col-sm-6 col-6">
+                      <div class="row">
+                        <div class="col-md-3" *ngFor="let SP of SPdatas">
+                          <a class="link_tag" [routerLink]="['/imgtopinfracompany',SP.id]">
+                            <div class="hide_and_card">
+                              <div class="card card_of_hide">
+                                <img src="{{SP.thumnailImagePath}}" class="img_space">
+                                <div class="infra_text_background">
+                                  <h5 class="infra_text">{{ SP.businessName }}</h5>
+                                  <h6 class="real_estate_text"></h6>
+                                </div>
+                                <p class="hyderbad_text_hide">{{getCityName(SP.cityId)}}</p>
+                                <div class="stars-container">
+                                  <span class="span-right " *ngFor="let i of getratingstar(SP.currentRating)">
+                                    <i class="fa fa-star cstar active"></i>
+                                  </span>
+                                </div>
+                              </div>
                             </div>
-                            <p class="hyderbad_text_hide">{{getCityName(SP.cityId)}}</p>
-                            <div class="stars-container">
-                              <span class="span-right " *ngFor="let i of getratingstar(SP.currentRating)">
-                                <i class="fa fa-star cstar active"></i>
-                              </span>
-                            </div>
-                          </div>
+                          </a>
                         </div>
-                      </a>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <app-advertise-page></app-advertise-page>
                     </div>
                   </div>
+
                 </div>
-                <!-- <div class="tab-pane fade" id="ex23-tabs-2" role="tabpanel" aria-labelledby="ex23-tab-2">
+                <div class="tab-pane fade" id="ex23-tabs-2" role="tabpanel" aria-labelledby="ex23-tab-2">
                   <div class="row">
-                    <div class="col-md-12" *ngFor="let SP of SPdatas">
+
+                  </div>
+                  <div class="row">
+                    <div class="col-md-8" *ngFor="let SP of SPdatas">
                       <div class="card sec_tab_card">
                         <div class="row">
                           <div class="col-md-3">
@@ -167,16 +176,19 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col-md-4">
+
+                    </div>
                   </div>
-
-
                   <br>
-                </div> -->
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
+
   </div>
 </div>

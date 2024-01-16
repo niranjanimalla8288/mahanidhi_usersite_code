@@ -33,7 +33,7 @@ export class FeaturedbusinesspostsComponent {
       this.mainCategoryCounts = data;
       console.log(data, "count")
     });
-    console.log(this.countProductsByCategoryId, "get data");
+    // console.log(this.countProductsByCategoryId, "get data");
     this.SpService.getServiceProviders().subscribe((data: any) => {
       this.stars = data;
       this.calculateInfraDeveloperCount();

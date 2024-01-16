@@ -110,22 +110,19 @@ export class HomeadvancedsearchComponent implements OnInit {
   // user details send method
 
   onSubmitCustomerData() {
-
+    localStorage.setItem('StateId', this.search.StateId.toString());
+    localStorage.setItem('CityId', this.search.CityId.toString());
+    localStorage.setItem('CategoryId', this.search.CategoryId.toString());
     // this.Closebtn();
     document.getElementById('btnModelClsoe')?.click();
     this.navigateToAnotherPage();
-    // this.navigateToAnotherPage();
 
-    // this._serviceAdvancesearch.postData(this.search).subscribe((data: any) => {
-    //   this.customerService.saveCustomerToLocalStorage(this.customer);
-    //   console.log(data, "customer details");
-    //   this._toaster.success("Your Details have been send to your email");
-    //   this.Closebtn();
-    //   this.navigateToAnotherPage();
-
-    // });
   }
-
+  searchSubmit() {
+    localStorage.setItem('StateId', this.search.StateId.toString());
+    localStorage.setItem('CityId', this.search.CityId.toString());
+    localStorage.setItem('CategoryId', this.search.CategoryId.toString());
+  }
   saveCustomer(): void {
     // Save customer to local storage
     this.customerService.saveCustomerToLocalStorage(this.customer);

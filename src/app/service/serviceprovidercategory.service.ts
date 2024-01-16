@@ -45,4 +45,5 @@ export class ServiceprovidercategoryService {
   deleteServiceprovidercategory(id: number): Observable<any> {
     return this.http.delete(`${this.apiurl + "Serviceprovidercategories"}/${id}`);
   }
+
 }

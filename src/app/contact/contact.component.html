@@ -17,7 +17,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
+        <div class="col-md-7">
             <div class="card">
                 <div class="row">
                     <div class="col-md-4">
@@ -52,18 +52,34 @@
                 <br>
             </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-5">
             <br>
-            <h5 class="bold"><i class="fa fa-building-o"></i>&nbsp;&nbsp;Contact Us</h5>
+            <ul class="list-group list-group-flush" *ngFor="let details of organizationDetails">
+                <div class="organization_title">
+                    <h3>Contact Us</h3>
+                </div>
+                <li class="list-group-item"><i class="fa fa-building-o"></i> {{details.name}}</li>
+                <li class="list-group-item"><i class="fa fa-home color_icon"></i> {{details.contactPerson}}</li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> {{details.contactNumber}}</li>
+                <li class="list-group-item"><i class="fa fa-envelope"></i> {{details.supportEmail}}</li>
+                <li class="list-group-item"><i class="fa fa-calendar">
+                        {{details.addressLine1}},{{details.addressLine2}}
+                    </i>
+                </li>
+                <li class="list-group-item">
+                    {{details.addressLine3}},
+                    {{details.pinCode}}
+                </li>
+            </ul>
+            <!-- <h5 class="bold">&nbsp;&nbsp;Contact Us</h5>
             <hr class="small_line_hr">
-            <div class="bold color_icon"><i class="fa fa-home color_icon"></i>&nbsp;&nbsp; Mahanidhi Leads Private
+            <div class="bold color_icon">&nbsp;&nbsp; Mahanidhi Leads Private
                 Limited</div>
             <p class="color_icon">368/369 ,Suraram Colony, Hyderabad 500055</p>
-            <p class="color_icon space_of_tel"> <i class="fa fa-phone"></i> Tel : + (91) - 7093135710<br><i
-                    class="fa fa-envelope"></i>
-                <a routerLink="#" class="email_web">mahhanidhi2023@gmail.com</a><br>
-                <i class="fa fa-calendar"></i> Business Hours : 9:30 - 5:30
-            </p>
+            <p class="color_icon space_of_tel"> Tel : + (91) - 7093135710<br>
+                <a routerLink="#" class="email_web">&nbsp;&nbsp; mahhanidhi2023@gmail.com</a><br>
+               &nbsp;&nbsp; Business Hours : 9:30 - 5:30
+            </p> -->
         </div>
     </div>
 </div>

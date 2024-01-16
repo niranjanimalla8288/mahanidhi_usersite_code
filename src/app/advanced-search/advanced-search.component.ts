@@ -43,7 +43,11 @@ export class AdvancedSearchComponent implements OnInit {
   inputLookingFor: any;
   inputSearchString: any;
 
+  searchStateID: any;
 
+  localStorageStateId: string | null = null;
+  localStorageCityId: string | null = null;
+  localStorageCategoryId: string | null = null;
   constructor(
     public _ServiceProvider: ServiceproviderService,
     public _cityservice: CityService,
@@ -185,7 +189,50 @@ export class AdvancedSearchComponent implements OnInit {
       });
   }
 
+  LoadSPsForSearchFormInput() {
+    console.log("params data");
+    //console.log(this.activateRoute.params);
+    this.activateRoute.queryParamMap.subscribe(params => {
+      this.setInputs(
+        Number(params.get('StateId')),
+        Number(params.get('CityId')),
+        Number(params.get('CategoryId')),
+        params.get('customerName'),
+        params.get('customerEmail'),
+        params.get('customerMobile'),
+        params.get('lookingFor'),
+        params.get('SearchString')
+      );
+      this.inputStateId = Number(params.get('StateId'));
+      this.inputCityId = Number(params.get('CityId'));
+      this.inputCategoryId = Number(params.get('CategoryId'));
+      this.inputCustomerName = params.get('customerName');
+      this.inputCustomerMobile = params.get('customerMobile');
+      this.inuputCustomerEmail = params.get('customerEmail');
+      this.inputLookingFor = params.get('lookingFor');
+      this.inputSearchString = params.get('SearchString');
+    });
+
+
+    this._serviceAdvancesearch.getAdvancesearch({
+      SearchString: this.inputSearchString,
+      StateId: this.inputStateId,
+      CityId: this.inputCityId,
+      CategoryId: this.inputCategoryId,
+      customerEmail: this.inuputCustomerEmail,
+      customerMobile: this.inputCustomerMobile,
+      customerName: this.inputCustomerName,
+      lookingFor: this.inputLookingFor
+    }).subscribe(
+      (data: any) => {
+        console.log("After entering into service");
+        this.SPdatas = data;
+        console.log(this.SPdatas, "sp data");
+      });
+  }
+
   ngOnInit(): void {
+    this.getalldata();
     this._cityservice.getCities().subscribe((data: any) => {
       this.Citydata = data;
     });
@@ -199,8 +246,21 @@ export class AdvancedSearchComponent implements OnInit {
     this.LoadSPsForInput();
     this.customer = this.customerService.getCustomerFromLocalStorage() || new Customer();
     console.log(this.customer = this.customerService.getCustomerFromLocalStorage() || new Customer(), "hi local storage data");
+
+
+    this.localStorageStateId = localStorage.getItem('StateId');
+    console.log(this.localStorageStateId, "local sotrage state id");
+    this.localStorageCityId = localStorage.getItem('CityId');
+    console.log(this.localStorageCityId, "this local city id");
+    this.localStorageCategoryId = localStorage.getItem('CategoryId');
+    console.log(this.localStorageCategoryId, "This is Local storage Category Id");
   }
 
+  // getLocalStorageData() {
+  //   this._serviceAdvancesearch.localStorage().subscribe((data: any) => {
+  //     console.log(data, "local storage dagta");
+  //   });
+  // }
   get() {
     this._ServiceProvider.getServiceProviders().subscribe((data: any) => {
       this.SPdata = data;

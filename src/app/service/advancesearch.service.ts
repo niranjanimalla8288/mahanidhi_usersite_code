@@ -11,6 +11,7 @@ export class AdvancesearchService {
 
   // public apiurl = "http://localhost:5148/api/AdvancedSearch";
   public apiurl = environment.apiUrl;
+  localStorage: any;
   // http://localhost:5148/api/AdvancedSearch?StateId=1&CityId=1&CategoryId=1&SearchString=vamshi
   // http://localhost:4200/recentsposts?StateId=1&CityId=2&CategoryId=1&SearchString=VAMSHI
   constructor(public http: HttpClient) { }
@@ -31,7 +32,10 @@ export class AdvancesearchService {
       .set('lookingFor', searchDTO.lookingFor.toString())
       .set('SearchString', searchDTO.SearchString);
 
-
+    // Save StateId, CityId, and CategoryId in local storage
+    // this.localStorage.set('StateId', searchDTO.StateId.toString());
+    // this.localStorage.set('CityId', searchDTO.CityId.toString());
+    // this.localStorage.set('CategoryId', searchDTO.CategoryId.toString());
     // Make the GET request with the properly serialized parameters
     return this.http.get<any>(this.apiurl + "AdvancedSearch", { params });
   }
@@ -39,4 +43,5 @@ export class AdvancesearchService {
   postData(data: AdvancedSearchDTO) {
     return this.http.post(this.apiurl + "AdvancedSearch", data);
   }
+
 }

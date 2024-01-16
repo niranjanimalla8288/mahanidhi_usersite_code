@@ -45,6 +45,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackagesComponent } from './packages/packages.component';
 import { RouterModule } from '@angular/router';
+import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
 // import { AdvancedsearchComponent } from './advancedsearch/advancedsearch.component';
 
 @NgModule({
@@ -89,6 +90,7 @@ import { RouterModule } from '@angular/router';
     TermsandconditionsComponent,
     AdvancedSearchComponent,
     PackagesComponent,
+    AdvertisePageComponent,
 
 
 
