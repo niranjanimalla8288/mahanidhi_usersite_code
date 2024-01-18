@@ -4,6 +4,7 @@ import { BusinessRegistrationService } from '../service/business-registration.se
 import { ToastrService } from 'ngx-toastr';
 import { ServiceProviderService } from '../service/service-provider.service';
 import { Serviceprovider } from '../model/serviceprovider';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -13,14 +14,22 @@ import { Serviceprovider } from '../model/serviceprovider';
 export class SignupComponent implements OnInit {
 
   businessModel: BusinessRegistration = new BusinessRegistration();
+  loading = false;
   serviceProviderModel: Serviceprovider = new Serviceprovider();
-  constructor(public service: BusinessRegistrationService, private toaster: ToastrService, public serviceProvider: ServiceProviderService) { }
+  constructor(public service: BusinessRegistrationService,
+    public router: Router,
+
+    private toaster: ToastrService, public serviceProvider: ServiceProviderService) { }
   ngOnInit(): void {
 
   }
   onSubmit() {
     this.service.businesPost(this.businessModel).subscribe(data => {
+      setTimeout(() => {
+        this.loading = true
+      }, 2000);
       this.toaster.success('Successfully Register Your Details', 'Business Registration');
+      this.router.navigate(["/businnes-register-success"]);
       console.log("Successfully Register Business Data", data);
     });
   }

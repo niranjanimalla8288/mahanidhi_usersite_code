@@ -16,12 +16,19 @@ export class AlloffersComponent implements OnInit {
   sp: any;
   city: any[] = [];
   stars: Serviceprovider[] = [];
+  loading = true;
   constructor(public categoryService: ServiceprovidercategoryService, public spService: ServiceProviderService) { }
   ngOnInit(): void {
     this.categoryService.getServiceprovidercategories().subscribe((data: any) => {
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
       this.categoryData = data;
     });
     this.spService.getServiceProviders().subscribe((data: any) => {
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
       this.sp = data;
       this.stars = data;
     });

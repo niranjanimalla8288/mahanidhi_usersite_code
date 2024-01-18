@@ -24,99 +24,15 @@
             </div>
           </a>
         </div>
-        <!-- <div class="col-md-4">
-          <div class="non">
-            <div class="background_img" routerLink="/infradevelopers">
+        <!-- Add custom pagination controls -->
+        <div class="pagination_buttons">
+          <button class="previous_page" (click)="previousPage()" [disabled]="currentPage === 0">Previous</button>
+          <span>{{ currentPage + 1 }} / {{ totalPages }}</span>
+          <button class="next_page" (click)="nextPage()" [disabled]="currentPage === totalPages - 1">Next</button>
 
-              <div></div>
-            </div>
-            <div class="bold color_icon"><i class="fa fa-user color_icon icon_hover"
-                aria-hidden="true"></i>&nbsp;&nbsp;Infra Developer<span class="justify-content-end">(1)</span></div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="non">
-            <div class="background_img" routerLink="/groceries">
-
-              <div></div>
-            </div>
-            <div class="bold color_icon"><i class="fa fa-car color_icon icon_hover"
-                aria-hidden="true"></i>&nbsp;&nbsp;Groceries<span class="justify-content-end">(1)</span></div>
-          </div>
-        </div> -->
-        <!-- <div class="col-md-4">
-          <div class="non">
-            <div class="background_img1" routerLink="/hospitals">
-
-              <div></div>
-            </div>
-            <div class="bold color_icon"><i class="fa fa-home color_icon icon_hover"></i>&nbsp;&nbsp;Hospitals <span
-                class="justify-content-end">(1)</span></div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="non">
-            <div class="background_img2">
-
-              <div></div>
-            </div>
-            <div class="bold color_icon"><i class="fa fa-home color_icon icon_hover"></i>&nbsp;&nbsp;Children
-              Hospitals<span class=" justify-content-end">(1)</span></div>
-          </div>
-        </div> -->
-
-        <!-- <div class="counter-four">
-     <div class="counter-content">
-         <div class="row">
-             <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
-                 <a routerLink="/Restaurant"><div class="counter-item counter-wrapper">
-                    <i class="fa icon-border-bg-2 fa-home"></i>
-                     <h4><span class="number-count" data-from="0" data-to="1" data-speed="800" data-refresh-interval="50"></span></h4>
-                       <h6>Real Estate</h6>
-                        <div class="clearfix"></div>
-                    </div></a>
-                 </div>
-                     <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
-                     <a routerLink="/infradevelopers">
-                 <div class="counter-item counter-wrapper">
-                  <i class="fa icon-border-bg-3 fa-user"></i>
-                      <h4><span class="number-count" data-from="0" data-to="0" data-speed="800" data-refresh-interval="50"></span></h4>
-                       <h6>Infra Developer...</h6>
-                    <div class="clearfix"></div>
-              </div> </a>
-             </div>
-             <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
-                   <a routerLink="/groceries">
-                <div class="counter-item counter-wrapper">
-                  <i class="fa icon-border-bg-4 fa-car"></i>
-                    <h4><span class="number-count" data-from="0" data-to="0" data-speed="800" data-refresh-interval="50"></span></h4>
-                    <h6>Groceries</h6>
-                 <div class="clearfix"></div>
-                </div> </a>
-             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
-               <a routerLink="/hospitals">
-                    <div class="counter-item counter-wrapper">
-                         <i class="fa icon-border-bg-5 fa-home"></i>
-                      <h4><span class="number-count" data-from="0" data-to="1" data-speed="800" data-refresh-interval="50"></span></h4>
-                   <h6>Hospitals</h6>
-                  <div class="clearfix"></div>
-                </div> </a>
-             </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 col-12 ">
-      <a routerLink="#">
-         <div class="counter-item counter-wrapper">
-            <i class="fa icon-border-bg-6 fa-home"></i>
-             <h4><span class="number-count" data-from="0" data-to="1" data-speed="800" data-refresh-interval="50"></span></h4>
-             <h6>Children Hospit...</h6>
-        <div class="clearfix"></div>
-          </div> </a>
-         </div>
- </div>
-         <div class="clearfix"></div>
-   </div>
-
-</div> -->
+        <br>
+        <br><br><br>
       </div>
     </div>
   </div>

@@ -4,15 +4,20 @@
 <div class="col-md-12">
     <!-- search -->
     <div class="space_of_icon search_space">
-        <span><i class="fa fa-search icon_color" style="font-size:20px"></i>Search</span>
+        <!-- <span><i class="fa fa-search icon_color" style="font-size:20px"></i>Search</span> -->
     </div>
     <!-- <hr class="small_hr"> -->
     <!-- <div class="row"> -->
     <div class="col-md-12 col-12">
         <div class="input-group">
-            <input type="search" class="form-control space_of_icon" placeholder="Type something" aria-label="Search"
-                aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline search_bar_button" data-mdb-ripple-init>search</button>
+            <input type="text" [(ngModel)]="searchTerm" (input)="applyFilter()" placeholder="Search categories">
+
+            <!-- <input type="search" class="form-control space_of_icon" [(ngModel)]="searchFilter"
+                placeholder="Type something" aria-label="Search" aria-describedby="search-addon" /> -->
+            <!-- <input type="text" [(ngModel)]="searchTerm" (input)="applyFilter()" placeholder="Search spData"> -->
+            <!-- <button type="button" class="btn btn-outline search_bar_button" (click)="filterProducts()"
+                data-mdb-ripple-init>search</button> -->
+            <!-- <button type="button" class="btn btn-outline search_bar_button" data-mdb-ripple-init>search</button> -->
         </div>
         <!-- </div> -->
     </div>
@@ -23,7 +28,7 @@
     </div>
     <!-- <hr class="small_line"> -->
     <div class="col-md-12">
-        <div class="card house_card" *ngFor="let sps of sp ">
+        <div class="card house_card" *ngFor="let sps of filteredCategoryData ">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-6">
                     <img src="{{ sps.thumnailImagePath }}" class="img_house"
@@ -56,10 +61,14 @@
     <h5><i class="fa fa-folder icon_color space"></i>&nbsp; Categories</h5>
     <div>
         <ul class="category_list" *ngFor="let category of categoryData">
-            <li class="col-12 col-sm-12 col-md-12 col-lg-12">
-                <span class="fa fa-angle-right"></span>&nbsp;
-                <a routerLink="#">{{category.name}} <span dir="rtl" class="color">({{categoryCount}})</span></a>
-            </li>
+            <a [routerLink]="['/business-category',category.id]">
+
+                <li class="col-12 col-sm-12 col-md-12 col-lg-12">
+                    <span class="fa fa-angle-right"></span>&nbsp;
+                    <a routerLink="#">{{category.name}} <span dir="rtl" class="color">({{categoryCount}})</span></a>
+                </li>
+
+            </a>
         </ul>
     </div>
 
@@ -71,7 +80,7 @@
     <h6><i class="fa fa-clock-o space_of_icon icon_color" aria-hidden="true"></i>&nbsp; Recent Posts</h6>
     <!-- <hr class="small_line"> -->
     <div class="col-md-12">
-        <div class="card house_card" *ngFor="let sps of sp ">
+        <div class="card house_card" *ngFor="let sps of serviceProviderData ">
             <div class="row">
                 <div class="col-md-4 col-sm-4 col-6">
                     <img src="{{ sps.thumnailImagePath }}" class="img_house"

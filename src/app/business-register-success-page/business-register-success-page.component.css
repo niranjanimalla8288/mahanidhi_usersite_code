@@ -1,0 +1,38 @@
+.container-fluid {
+    margin-top: -240px;
+    height: 400px;
+    background: rgba(0, 0, 0, 0) linear-gradient(to right, rgb(103, 178, 111), rgb(76, 162, 205)) repeat scroll 0% 0%;
+}
+
+.gorup_btn button {
+    border: none;
+    background-color: cornflowerblue;
+    color: white;
+    transition: all 0.4s;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    width: 200px;
+    height: 50px;
+    margin-top: -30px;
+}
+
+.gorup_btn {
+    float: right;
+}
+
+.gorup_btn button:hover {
+    background-color: black;
+    color: white;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.288);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 20px;
+    height: 250px;
+}
+
+
+.box h1,
+h3 {
+    color: white;
+}

@@ -1,4 +1,7 @@
 <app-mainnavbar></app-mainnavbar>
+<div class="loading" *ngIf="loading">
+    <span>Loading </span>&nbsp; <i class="fa fa-spinner" aria-hidden="true"></i>
+</div>
 <div *ngIf="serviceProvider">
     <div class="background">
         <div class="container">
@@ -97,17 +100,17 @@
                                     <span class="span-left"><i class="fa fa-eye view-icon icon-bg-4"></i> Views:</span>
                                     <span class="span-right">{{ serviceProvider.views }}</span>
                                 </div>
-                                <div class="col-md-6 col-sm-6 col-12">
+                                <!-- <div class="col-md-6 col-sm-6 col-12">
                                     <span class="span-left"><i class="fa fa-print view-icon icon-bg-4"></i>
                                         Print:</span>
                                     <span class="span-right">
                                         <a target="_blank" routerLink="#"><i class="fa fa-print fa-lg"></i> Print</a>
                                     </span>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
 
-                        <!-- <div class="container mt-5">
+                        <div class="container mt-5">
                             <div class="row">
                                 <ul class="nav nav-tabs" id="myTabs">
                                     <div class="col-md-3 col-12">
@@ -143,14 +146,14 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="detail-page-description">
-                                                Top Infra Company
+                                                {{serviceProvider.businessName}}
                                             </div>
                                             <hr>
                                             <div class="detail-page-description">
-                                                <h4 class="info-subtitle">
+                                                <!-- <h4 class="info-subtitle">
                                                     <i class="fa fa-map-marker"></i>
                                                     Location on Map
-                                                </h4>
+                                                </h4> -->
                                             </div>
                                         </div>
                                     </div>
@@ -164,29 +167,32 @@
                                                 <div class="col-md-12 col-sm-12 col-12">
 
 
-                                                    <div class="table-responsive">
+                                                    <!-- <div class="table-responsive">
                                                         <table class="table contact-table">
                                                             <tbody>
                                                                 <tr>
                                                                     <th>
-                                                                       
+
                                                                     </th>
-                                                                    <td> <b><label class="user-name-detail">Admin
+                                                                    <td> <b><label class="user-name-detail">
                                                                                 Admin</label></b></td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Address</th>
-                                                                    <td>Suraram colony, Hyderbad, telangana 500006,
-                                                                        India</td>
+                                                                    <td>
+                                                                        {{orgData[0]?.addressLine1}}
+                                                                        {{orgData[0]?.addressLine2}}
+                                                                        {{orgData[0]?.addressLine3}}
+                                                                    </td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Email</th>
-                                                                    <td>niranjan.exp@gmail.com</td>
+                                                                    <td>{{orgData[0]?.supportEmail}}</td>
                                                                 </tr>
 
                                                                 <tr>
                                                                     <th>Phone</th>
-                                                                    <td>12545622</td>
+                                                                    <td>+91 {{orgData[0]?.contactNumber}}</td>
                                                                 </tr>
                                                                 <tr>
                                                                     <th>Website</th>
@@ -194,17 +200,16 @@
                                                                 </tr>
                                                             </tbody>
                                                         </table>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
 
 
-                                                <div class="col-md-6 col-sm-12 col-12">
+                                                <div class="col-md-12 col-sm-12 col-12">
                                                     <h5 class="text-black">Contact via email</h5>
                                                     <div class="rs-enquiry">
                                                         <div class="clearfix"></div>
                                                         <span class="agent-email-form-holder">
-                                                            <form role="form" method="post" id="message-form"
-                                                                (ngSubmit)="onSubmit()">
+                                                            <form (ngSubmit)="onSubmit()">
                                                                 <input type="hidden" name="unique_id"
                                                                     value="6566f876a895e">
                                                                 <input type="hidden" name="title"
@@ -254,10 +259,10 @@
                                                                 </div>
                                                                 <div class="row">
                                                                     <div class="col-sm-3">
-                                                                        <span class="question">5 + 7 =
-                                                                            ?</span>
-                                                                        <input type="text" name="ans" value=""
-                                                                            class="form-control form-control-sm agent-form-answer-input">
+                                                                        <!-- <span class="question">5 + 7 =
+                                                                            ?</span> -->
+                                                                        <!-- <input type="text" name="ans" value=""
+                                                                            class="form-control form-control-sm agent-form-answer-input"> -->
                                                                         <div class="clearfix"></div>
                                                                     </div>
                                                                 </div>
@@ -306,7 +311,7 @@
                                     <p>This is the content of the Contact tab.</p>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

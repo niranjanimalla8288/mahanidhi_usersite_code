@@ -220,3 +220,32 @@ a {
         margin-top: 10px;
     }
 }
+
+.pagination_buttons .previous_page {
+    border: none;
+    width: 140px;
+    height: 40px;
+    background-color: #1DBFFF;
+    color: white;
+    transition: all 0.4s;
+}
+
+
+.pagination_buttons .previous_page:hover {
+    background-color: black;
+    color: white;
+}
+
+.pagination_buttons .next_page {
+    border: none;
+    width: 140px;
+    height: 40px;
+    background-color: #1DBFFF;
+    color: white;
+    transition: all 0.4s;
+}
+
+.pagination_buttons .next_page:hover {
+    background-color: black;
+    color: white;
+}

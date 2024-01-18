@@ -12,7 +12,9 @@ import { Customer } from '../model/customer';
 import { CustomerService } from '../service/customer.service';
 import { AdvancedSearchDTO } from '../model/AdvancedSearchDTO';
 import { ToastrService } from 'ngx-toastr';
-
+import { CustomerLocalStorageData } from '../model/customer-localstorage-data';
+import { LocalstorageService } from '../service/localstorage.service';
+declare var $: any;
 @Component({
   selector: 'app-homeadvancedsearch',
   templateUrl: './homeadvancedsearch.component.html',
@@ -42,7 +44,8 @@ export class HomeadvancedsearchComponent implements OnInit {
   states: State[] = [];
   citiesData: City[] = [];
   search: AdvancedSearchDTO = new AdvancedSearchDTO();
-
+  formOpenedBefore: boolean = true;
+  customerData: CustomerLocalStorageData = new CustomerLocalStorageData();
   constructor(public _ServiceProvider: ServiceproviderService,
     public _cityservice: CityService,
     public _serviceAdvancesearch: AdvancesearchService,
@@ -50,6 +53,7 @@ export class HomeadvancedsearchComponent implements OnInit {
     public _Maincategoryservice: ServiceprovidercategoryService,
     public customerService: CustomerService,
     private _toaster: ToastrService,
+    public _modalService: LocalstorageService,
     public router: Router, public http: HttpClient) { }
 
   ngOnInit(): void {
@@ -65,8 +69,23 @@ export class HomeadvancedsearchComponent implements OnInit {
       this.Maincategorydata = data;
     });
 
-  }
+    const storedData = this._modalService.getData('customerData');
+    if (storedData) {
+      this.customerData = storedData;
+    }
+    this.formOpenedBefore = this._modalService.getData('formOpenedBefore') || false;
+    if (!this.formOpenedBefore) {
+      // Perform actions you want to do only the first time the form is opened
+      console.log('Opening the form for the first time.');
 
+      // Set the flag to indicate that the form has been opened
+      this._modalService.saveData('formOpenedBefore', true);
+    }
+  }
+  openPopupForm(): void {
+    // Add your logic to open the popup form here
+    console.log("Popup form opened!");
+  }
   get() {
     this._ServiceProvider.getServiceProviders().subscribe((data: any) => {
       this.SPdata = data;
@@ -90,7 +109,9 @@ export class HomeadvancedsearchComponent implements OnInit {
       this.CitydatabyId = data;
     });
   }
-
+  saveDataToLocalStorage(): void {
+    this._modalService.saveData('customerData', this.customerData);
+  }
 
   OnSelectState() {
     console.log(this.stateId);
@@ -110,13 +131,14 @@ export class HomeadvancedsearchComponent implements OnInit {
   // user details send method
 
   onSubmitCustomerData() {
+    this.saveDataToLocalStorage();
+    console.log(this.customerData, "this is local customer data saved");
     localStorage.setItem('StateId', this.search.StateId.toString());
     localStorage.setItem('CityId', this.search.CityId.toString());
     localStorage.setItem('CategoryId', this.search.CategoryId.toString());
     // this.Closebtn();
     document.getElementById('btnModelClsoe')?.click();
     this.navigateToAnotherPage();
-
   }
   searchSubmit() {
     localStorage.setItem('StateId', this.search.StateId.toString());
@@ -142,4 +164,5 @@ export class HomeadvancedsearchComponent implements OnInit {
   toggleMenu(): void {
     this.isMenuOpened = !this.isMenuOpened;
   }
+
 }

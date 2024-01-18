@@ -11,16 +11,24 @@ import { ServiceprovidercategoryService } from '../service/serviceprovidercatego
 })
 export class HomepagesidecontainesComponent implements OnInit {
   constructor(private spService: ServiceProviderService, private cityService: CityService, public categoryService: ServiceprovidercategoryService) { }
-  sp: any[] = [];
+  // sp: any[] = [];
   city: any[] = [];
   stars: Serviceprovider[] = [];
   categoryData: any;
   categoryCount: number = 0;
-
+  filterProduct: any;
+  allProducts: any;
+  searchFilter = ''
+  searchTerm: string = '';
+  filteredCategoryData: any;
+  serviceProviderData: any;
   ngOnInit(): void {
     this.spService.getServiceProviders().subscribe((data: any) => {
-      this.sp = data;
+      this.serviceProviderData = data;
       this.stars = data;
+      this.filterProduct = data;
+      this.allProducts = data;
+      this.filteredCategoryData = data;
     });
     this.cityService.getCities().subscribe((data: any) => {
       this.city = data
@@ -45,5 +53,28 @@ export class HomepagesidecontainesComponent implements OnInit {
   }
   getRatingArray(rating: number): any[] {
     return Array.from({ length: rating });
+  }
+
+  // filterProducts() {
+  //   this.filterProduct = this.allProducts.filter(
+  //     (p: any) => {
+  //       return p.title.includes(this.searchFilter)
+  //     }
+  //   )
+  // }
+
+  applyFilter() {
+    if (this.searchTerm.trim() !== '') {
+      // Convert search term to lowercase for case-insensitive search
+      const searchTermLower = this.searchTerm.toLowerCase();
+
+      // Filter the categoryData based on the search term
+      this.filteredCategoryData = this.serviceProviderData.filter((category: any) =>
+        category.businessName.toLowerCase().includes(searchTermLower)
+      );
+    }
+    else {
+      this.filteredCategoryData = this.serviceProviderData;
+    }
   }
 }

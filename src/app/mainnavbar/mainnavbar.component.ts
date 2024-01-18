@@ -22,6 +22,7 @@ export class MainnavbarComponent implements OnInit {
       console.log(data, "Adds Data");
       this.addModelData = data
     });
+
     this._orgService.getOrganizationDetails().subscribe((data: any) => {
       this.orgData = data;
     });

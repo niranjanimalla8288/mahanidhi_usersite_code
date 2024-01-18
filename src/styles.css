@@ -2,3 +2,28 @@
 body {
    background-color: #f6f6f6;
 }
+
+
+/* loading spinner css */
+.loading {
+   position: absolute;
+   left: 50%;
+   top: 90%;
+   transform: translate(-50%, -50%);
+}
+
+.loading i {
+   font-size: 35px;
+   animation: spinner 0.5s infinite;
+}
+
+@keyframes spinner {
+   0% {
+      transform: rotate(-180deg);
+   }
+}
+
+.loading span {
+   font-weight: 600;
+   font-size: 26px;
+}

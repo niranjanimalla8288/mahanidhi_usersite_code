@@ -11,10 +11,14 @@ export class PackagesComponent implements OnInit {
 
 
   planDetails: any[] = [];
+  loading = true;
   constructor(public planService: PlanService) { };
   ngOnInit(): void {
 
     this.planService.getPlan().subscribe((data: any) => {
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
       this.planDetails = data;
     });
   }

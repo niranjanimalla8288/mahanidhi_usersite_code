@@ -26,9 +26,12 @@ export class FeaturedbusinesspostsComponent {
   categoryIdToCount: number = 1;
   id: number = 0;
   mainCategoryCounts: any[] = [];
+  loading: boolean = true;
+
   constructor(public router: ActivatedRoute, private SpService: ServiceProviderService, private _serviceProviderService: ServiceproviderService, public serviceCategory: ServiceprovidercategoryService) { }
 
   ngOnInit(): void {
+
     this._serviceProviderService.getServiceProviderCategoryCount().subscribe((data: any) => {
       this.mainCategoryCounts = data;
       console.log(data, "count")
@@ -70,7 +73,16 @@ export class FeaturedbusinesspostsComponent {
   getCategory() {
     this.serviceCategory.getServiceprovidercategories().subscribe((data: any) => {
       this.category = data;
-    });
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
+    },
+      (error) => {
+        console.error('Error fetching data:', error);
+        setTimeout(() => {
+          this.loading = false
+        }, 2000);
+      });
   }
 
   // getCategoryByServiceIdDATA() {

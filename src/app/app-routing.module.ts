@@ -38,6 +38,7 @@ import { ImgtopinfracompanyComponent } from './imgtopinfracompany/imgtopinfracom
 import { PrivacyandpolicyComponent } from './privacyandpolicy/privacyandpolicy.component';
 import { TermsandconditionsComponent } from './termsandconditions/termsandconditions.component';
 import { PackagesComponent } from './packages/packages.component';
+import { BusinessRegisterSuccessPageComponent } from './business-register-success-page/business-register-success-page.component';
 
 const routes: Routes = [
   { path: "", component: MainhomeComponent },
@@ -77,7 +78,8 @@ const routes: Routes = [
   { path: "privacyandpolicy", component: PrivacyandpolicyComponent },
   { path: "termsandconditions", component: TermsandconditionsComponent },
   { path: "advanced-search-components", component: AdvancedSearchComponent },
-  { path: "packages", component: PackagesComponent }
+  { path: "packages", component: PackagesComponent },
+  { path: "businnes-register-success", component: BusinessRegisterSuccessPageComponent }
   // {path:"signin",component:SigninComponent},
 ];
 

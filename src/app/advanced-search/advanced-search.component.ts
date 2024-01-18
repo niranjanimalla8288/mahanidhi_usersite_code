@@ -37,17 +37,18 @@ export class AdvancedSearchComponent implements OnInit {
   inputStateId: any;
   inputCityId: any;
   inputCategoryId: any;
-  inputCustomerName: any;
-  inuputCustomerEmail: any;
-  inputCustomerMobile: any;
-  inputLookingFor: any;
+  // inputCustomerName: any;
+  // inuputCustomerEmail: any;
+  // inputCustomerMobile: any;
+  // inputLookingFor: any;
   inputSearchString: any;
 
   searchStateID: any;
-
+  kmRange: number[] = [0, 100];
   localStorageStateId: string | null = null;
   localStorageCityId: string | null = null;
   localStorageCategoryId: string | null = null;
+  loading = true;
   constructor(
     public _ServiceProvider: ServiceproviderService,
     public _cityservice: CityService,
@@ -63,7 +64,10 @@ export class AdvancedSearchComponent implements OnInit {
     this.selectedValues[fieldName] = selectedValue;
   }
 
-
+  onRangeChange(event: any): void {
+    console.log('Selected KM Range:', this.kmRange);
+    // You can perform additional logic based on the selected range
+  }
   searchByBusinessName() {
     if (this.selectedValues && this.selectedValues.SearchString) {
       this._serviceAdvancesearch.getAdvancesearch(this.selectedValues).subscribe(
@@ -82,10 +86,10 @@ export class AdvancedSearchComponent implements OnInit {
       StateId: 0,
       CityId: 0,
       CategoryId: 0,
-      customerEmail: '',
-      customerMobile: '',
-      customerName: '',
-      lookingFor: ''
+      // customerEmail: '',
+      // customerMobile: '',
+      // customerName: '',
+      // lookingFor: ''
     }).subscribe(
       (data: any) => {
         console.log("After entering into service");
@@ -96,55 +100,15 @@ export class AdvancedSearchComponent implements OnInit {
     );
   }
 
-  // navigateToAnotherPage() {
-  //   // Logic from the get() method
-  //   this._ServiceProvider.getServiceProviders().subscribe((data: any) => {
-  //     this.SPdatas = data;
-  //     console.log(data);
-  //   });
 
-  //   if (this.receivedParams) {
-  //     // Use receivedParams to make the API call
-
-  //     this.route.queryParams.subscribe((params: any) => {
-
-  //       this.receivedParams = params;
-
-
-  //       console.log(this.receivedParams);
-
-  //       this._serviceAdvancesearch.getAdvancesearch(this.receivedParams).subscribe(
-  //         (data: any) => {
-  //           console.log("After entering into service");
-  //           this.SPdatas = data;
-  //           console.log(this.SPdatas);
-  //         },
-  //         error => console.log(error)
-  //       );
-  //     });
-
-  //   } else if (this.selectedValues) {
-  //     // Use selectedValues to make the API call
-  //     this._serviceAdvancesearch.getAdvancesearch(this.selectedValues).subscribe(
-  //       (data: any) => {
-  //         console.log("After entering into service");
-  //         this.SPdatas = data;
-  //         console.log(this.SPdatas);
-  //       },
-  //       error => console.log(error)
-  //     );
-  //   }
-  // }
-
-
-  setInputs(stateId: any, cityId: any, categoryId: any, customerName: any, customerEmail: any, customerMobile: any, lookingofor: any, searrchString: any) {
+  setInputs(stateId: any, cityId: any, categoryId: any, searrchString: any) {
     this.inputStateId = stateId;
     this.inputCityId = cityId;
     this.inputCategoryId = categoryId;
-    this.inputCustomerName = customerName;
-    this.inputCustomerMobile = customerMobile;
-    this.inuputCustomerEmail = customerEmail;
-    this.inputLookingFor = lookingofor;
+    // this.inputCustomerName = customerName;
+    // this.inputCustomerMobile = customerMobile;
+    // this.inuputCustomerEmail = customerEmail;
+    // this.inputLookingFor = lookingofor;
     this.inputSearchString = searrchString;
   }
   LoadSPsForInput() {
@@ -155,19 +119,19 @@ export class AdvancedSearchComponent implements OnInit {
         Number(params.get('StateId')),
         Number(params.get('CityId')),
         Number(params.get('CategoryId')),
-        params.get('customerName'),
-        params.get('customerEmail'),
-        params.get('customerMobile'),
-        params.get('lookingFor'),
+        // params.get('customerName'),
+        // params.get('customerEmail'),
+        // params.get('customerMobile'),
+        // params.get('lookingFor'),
         params.get('SearchString')
       );
       this.inputStateId = Number(params.get('StateId'));
       this.inputCityId = Number(params.get('CityId'));
       this.inputCategoryId = Number(params.get('CategoryId'));
-      this.inputCustomerName = params.get('customerName');
-      this.inputCustomerMobile = params.get('customerMobile');
-      this.inuputCustomerEmail = params.get('customerEmail');
-      this.inputLookingFor = params.get('lookingFor');
+      // this.inputCustomerName = params.get('customerName');
+      // this.inputCustomerMobile = params.get('customerMobile');
+      // this.inuputCustomerEmail = params.get('customerEmail');
+      // this.inputLookingFor = params.get('lookingFor');
       this.inputSearchString = params.get('SearchString');
     });
 
@@ -177,10 +141,10 @@ export class AdvancedSearchComponent implements OnInit {
       StateId: this.inputStateId,
       CityId: this.inputCityId,
       CategoryId: this.inputCategoryId,
-      customerEmail: this.inuputCustomerEmail,
-      customerMobile: this.inputCustomerMobile,
-      customerName: this.inputCustomerName,
-      lookingFor: this.inputLookingFor
+      // customerEmail: this.inuputCustomerEmail,
+      // customerMobile: this.inputCustomerMobile,
+      // customerName: this.inputCustomerName,
+      // lookingFor: this.inputLookingFor
     }).subscribe(
       (data: any) => {
         console.log("After entering into service");
@@ -197,19 +161,19 @@ export class AdvancedSearchComponent implements OnInit {
         Number(params.get('StateId')),
         Number(params.get('CityId')),
         Number(params.get('CategoryId')),
-        params.get('customerName'),
-        params.get('customerEmail'),
-        params.get('customerMobile'),
-        params.get('lookingFor'),
+        // params.get('customerName'),
+        // params.get('customerEmail'),
+        // params.get('customerMobile'),
+        // params.get('lookingFor'),
         params.get('SearchString')
       );
       this.inputStateId = Number(params.get('StateId'));
       this.inputCityId = Number(params.get('CityId'));
       this.inputCategoryId = Number(params.get('CategoryId'));
-      this.inputCustomerName = params.get('customerName');
-      this.inputCustomerMobile = params.get('customerMobile');
-      this.inuputCustomerEmail = params.get('customerEmail');
-      this.inputLookingFor = params.get('lookingFor');
+      // this.inputCustomerName = params.get('customerName');
+      // this.inputCustomerMobile = params.get('customerMobile');
+      // this.inuputCustomerEmail = params.get('customerEmail');
+      // this.inputLookingFor = params.get('lookingFor');
       this.inputSearchString = params.get('SearchString');
     });
 
@@ -219,10 +183,10 @@ export class AdvancedSearchComponent implements OnInit {
       StateId: this.inputStateId,
       CityId: this.inputCityId,
       CategoryId: this.inputCategoryId,
-      customerEmail: this.inuputCustomerEmail,
-      customerMobile: this.inputCustomerMobile,
-      customerName: this.inputCustomerName,
-      lookingFor: this.inputLookingFor
+      // customerEmail: this.inuputCustomerEmail,
+      // customerMobile: this.inputCustomerMobile,
+      // customerName: this.inputCustomerName,
+      // lookingFor: this.inputLookingFor
     }).subscribe(
       (data: any) => {
         console.log("After entering into service");
@@ -270,8 +234,12 @@ export class AdvancedSearchComponent implements OnInit {
 
   getalldata() {
     this._ServiceProvider.getServiceProviders().subscribe((data: any) => {
-      this.SPdatas = data;
+
       console.log(data);
+      setTimeout(() => {
+        this.loading = false
+      }, 2000);
+      this.SPdatas = data;
       // this.navigateToAnotherPage();
     })
   }
@@ -298,7 +266,7 @@ export class AdvancedSearchComponent implements OnInit {
   }
 
   OnSelectState() {
-    console.log(this.stateId);
+    console.log(this.stateId, "On select stateId");
     if (this.stateId) {
       this._stateservice.getCitiesByStateById(this.stateId)
         .subscribe((cities: any) => {
@@ -314,6 +282,22 @@ export class AdvancedSearchComponent implements OnInit {
   //   document.getElementById('rangeValue').innerHTML = value;
   // }
 
-
+  onSubmitCustomerData() {
+    this._serviceAdvancesearch.getAdvancesearch({
+      SearchString: this.inputSearchString,
+      StateId: this.inputStateId,
+      CityId: this.inputCityId,
+      CategoryId: this.inputCategoryId,
+      // customerEmail: this.inuputCustomerEmail,
+      // customerMobile: this.inputCustomerMobile,
+      // customerName: this.inputCustomerName,
+      // lookingFor: this.inputLookingFor
+    }).subscribe(
+      (data: any) => {
+        console.log("Advance Searching Get Details");
+        this.SPdatas = data;
+        console.log(this.SPdatas, "sp data");
+      });
+  }
 }
 

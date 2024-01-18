@@ -3,8 +3,8 @@ export class AdvancedSearchDTO {
     CityId: number = 0;
     CategoryId: number = 0;
     SearchString: string = "All";
-    customerName: string = "";
-    customerEmail: string = "";
-    customerMobile: string = "";
-    lookingFor: string = "";
+    // customerName: string = "";
+    // customerEmail: string = "";
+    // customerMobile: string = "";
+    // lookingFor: string = "";
 }

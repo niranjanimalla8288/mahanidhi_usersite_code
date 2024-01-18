@@ -14,15 +14,15 @@ export class ContactsService {
   constructor(public http: HttpClient) { }
 
   getContacts() {
-    return this.http.get(this.apiurl + "Contact");
+    return this.http.get(this.apiurl + "Contacts");
   }
 
   getContactById(id: number) {
-    return this.http.get(`${this.apiurl + "Contact"}/${id}`);
+    return this.http.get(`${this.apiurl + "Contacts"}/${id}`);
   }
 
   createContact(data: Contacts) {
-    return this.http.post(this.apiurl + "Contact", data);
+    return this.http.post(this.apiurl + "Contacts", data);
 
   }
 }

@@ -15,73 +15,57 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <select (change)="OnSelectState()" class="form-select" aria-label="Default select example"
-                                [(ngModel)]="search.StateId">
+                            <select (change)="OnSelectState()" class="form-select" name="StateId"
+                                aria-label="Default select example" [(ngModel)]="search.StateId" required>
                                 <option value="0" selected>Please Select State</option>
                                 <option *ngFor="let sp of Statedata" [value]="sp.id">{{ sp.name }}</option>
                             </select>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <select class="form-select" aria-label="Default select example" [(ngModel)]="search.CityId">
+                            <select class="form-select" aria-label="Default select example" name="CityId"
+                                [(ngModel)]="search.CityId" required>
                                 <option value="0" selected>Please Select City</option>
                                 <option *ngFor="let ct of cityDt" [value]="ct.id">{{ct.name}}</option>
                             </select>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="search.CategoryId">
+                            <select class="form-select" aria-label="Default select example" name="CategoryId"
+                                [(ngModel)]="search.CategoryId" required>
                                 <option value="0" selected>Select any Category</option>
                                 <option *ngFor="let sp of Maincategorydata" [value]="sp.id">{{sp.name}}</option>
                             </select>
                         </div>
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
                             <div class="form-group">
-                                <input class="input-select form-control" placeholder="Enter Data" type="text">
+                                <input class="input-select form-control" [(ngModel)]="search.SearchString"
+                                    name="SearchString" placeholder="Enter Data" type="text">
                             </div>
-                            <!-- <select class="form-select" aria-label="Default select example"
-                                [(ngModel)]="selectedValues.SearchString">
-                                <option selected>Select any Business</option>
-                                <option *ngFor="let sp of SPdata" [value]="sp.businessName">{{sp.businessName}}</option>
-                            </select> -->
                         </div>
-                        <!-- <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            
-                        </div> -->
                         <div class="col-lg-3 col-md-3 col-sm-6 col-12">
-                            <!-- <select class="form-select" aria-label="Default select example">
-                                <option selected>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                              </select> -->
-
-                            <button type="submit" (click)="searchSubmit()"
+                            <button *ngIf="!formOpenedBefore" type="submit" (click)="searchSubmit()"
                                 class="btn btn-warning btn-sm col-12 col-md-12 button_color" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal"><i class="fa fa-search"></i>&nbsp;
                                 Search
                                 Businesses</button>
-                            <!-- <button type="button" class="btn btn-warning btn-sm col-12 col-md-12 button_color"
-                                (click)="toggleMenu()"><i class="fa fa-search"></i>&nbsp;
+
+                            <button *ngIf="formOpenedBefore" type="submit" (click)="onSubmitCustomerData()"
+                                class="btn btn-warning btn-sm col-12 col-md-12 button_color"><i
+                                    class="fa fa-search"></i>&nbsp;
                                 Search
-                                Businesses</button> -->
+                                Businesses</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
 </div>
 
 
 <!-- model  -->
 
 <!-- Button trigger modal -->
-
-
 <!-- Modal -->
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -93,26 +77,25 @@
             </div>
             <div class="modal-body">
                 <form (ngSubmit)="onSubmitCustomerData()">
-
                     <div class="form-group">
                         <label for="">Name</label>
-                        <input type="text" placeholder="Please Enter Name" name="name" [(ngModel)]="search.customerName"
-                            class="form-control">
+                        <input type="text" placeholder="Please Enter Name" name="customerName"
+                            [(ngModel)]="customerData.customerName" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Email</label>
                         <input type="text" placeholder="Please Enter Emal id" name="customerEmail"
-                            [(ngModel)]="search.customerEmail" class="form-control">
+                            [(ngModel)]="customerData.customerEmail" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Mobile Number</label>
                         <input type="text" placeholder="Please Enter Mobile Number" name="customerMobile"
-                            [(ngModel)]="search.customerMobile" class="form-control">
+                            [(ngModel)]="customerData.customerMobile" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="">Looking For</label>
-                        <input type="text" placeholder="Please Enter Address" name="address"
-                            [(ngModel)]="search.lookingFor" class="form-control">
+                        <input type="text" placeholder="Please Enter Address" name="lookingFor"
+                            [(ngModel)]="customerData.lookingFor" class="form-control">
                     </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-warning btn-sm col-12 col-md-12 button_color"><i

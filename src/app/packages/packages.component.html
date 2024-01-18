@@ -1,4 +1,7 @@
 <app-mainnavbar></app-mainnavbar>
+<div class="loading" *ngIf="loading">
+    <span>Loading </span>&nbsp; <i class="fa fa-spinner" aria-hidden="true"></i>
+</div>
 <br><br>
 <div class="container">
     <div class="row">
@@ -14,7 +17,7 @@
                         <li>Position Listing: {{plandata.positionInListing}} </li>
                         <li>Service Description: {{plandata.serviceDescription | titlecase}}</li>
                     </ul>
-                    <button>Add to packages</button>
+                    <button>Packages</button>
                 </div>
             </div>
         </div>

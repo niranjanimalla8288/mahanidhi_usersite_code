@@ -1,5 +1,7 @@
 <app-mainnavbar></app-mainnavbar>
-
+<div class="loading" *ngIf="loading">
+    <span>Loading </span>&nbsp; <i class="fa fa-spinner" aria-hidden="true"></i>
+</div>
 <div class="background">
     <div class="container">
         <div class="row">
@@ -18,39 +20,43 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <div class="card">
-                <div class="row">
-                    <div class="col-md-4">
-                        <input class="form-control mt-3 margin_space" type="text" name="sender_name" value=""
-                            placeholder="Name">
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-control mt-3" type="text" name="Email" value="" placeholder="Email">
-                    </div>
-                    <div class="col-md-4">
-                        <input class="form-control mt-3" type="text" name="Phone" value="" placeholder="Phone">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <textarea placeholder="Type your message here.." class="form-control mt-3 space_of_textarea"
-                            rows="6" name="msg"></textarea>
-                    </div>
-                    <div>
-                        <!-- <p class="multipication mt-3">4*9=?</p> -->
-                    </div>
-                    <!-- <div class="col-md-4">
-                        <input class="form-control space_div" type="text" name="Phone" value="">
-                    </div> -->
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="card">
                     <div class="row">
-                        <div class="col-md-5">
-                            <input class="btn btn-primary button_color mt-3" type="submit" value="Send">
-                            <input class="btn btn-primary mt-3 button_color_2" type="reset" value="Reset">
+                        <div class="col-md-4">
+                            <input class="form-control mt-3 margin_space" formcontrolName="name" type="text" name="name"
+                                value="" placeholder="Name">
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control mt-3" type="text" formcontrolName="email" name="email" value=""
+                                placeholder="Email">
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-control mt-3" type="text" formcontrolName="phone" name="phone" value=""
+                                placeholder="Phone">
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <textarea placeholder="Type your message here.." formcontrolName="message"
+                                class="form-control mt-3 space_of_textarea" rows="6" name="message"></textarea>
+                        </div>
+                        <div>
+                            <!-- <p class="multipication mt-3">4*9=?</p> -->
+                        </div>
+                        <!-- <div class="col-md-4">
+                                    <input class="form-control space_div" type="text" name="Phone" value="">
+                                </div> -->
+                        <div class="row">
+                            <div class="col-md-5">
+                                <input class="btn btn-primary button_color mt-3" type="submit" value="Send">
+                                <input class="btn btn-primary mt-3 button_color_2" type="reset" value="Reset">
+                            </div>
+                        </div>
+                    </div>
+                    <br>
                 </div>
-                <br>
-            </div>
+            </form>
         </div>
         <div class="col-md-5">
             <br>

@@ -21,6 +21,10 @@
 
 }
 
+.image_box .image_stars span {
+    text-align: center;
+}
+
 .link_tag {
     text-decoration: none;
 }
@@ -117,9 +121,7 @@ select {
     font-weight: 600;
 }
 
-.icon_space {
-    margin-left: 30px;
-}
+
 
 .nav-link {
     margin-right: -10px;
@@ -178,15 +180,7 @@ select {
     color: #aaa;
     margin-top: -50px;
  } */
-.space_of_icon_star {
-    margin-left: 10px;
-    margin-top: -8px;
-}
 
-.stars_center {
-    text-align: center;
-    margin-bottom: 10px;
-}
 
 .overZoomLink {
     height: 130px;
@@ -258,18 +252,21 @@ img {
     color: #b9b9b9;
 }
 
-.stars-container {
-    display: flex;
-    align-items: center;
-    /* Align stars vertically in the middle */
-    margin-left: 35%;
+input[type="range"] {
+    width: 100%;
+    /* Adjust the width as needed */
+    margin-bottom: 20px;
 }
 
-/* Adjust the spacing between stars if needed */
-.stars-container .span-right {
-    margin-right: 5px;
+.km_range_title {
+    font-weight: 600;
+    font-size: 20px;
 }
 
+.km_range_title .km_range_numbers {
+    font-weight: 600;
+    font-size: 14px;
+}
 
 .active {
     color: orange;
@@ -292,5 +289,24 @@ select option {
 
     .spcaed_on_icons {
         padding-left: 10px;
+    }
+}
+
+
+.loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.loading i {
+    font-size: 35px;
+    animation: spinner 0.5s infinite;
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(-180deg);
     }
 }

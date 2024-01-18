@@ -46,6 +46,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PackagesComponent } from './packages/packages.component';
 import { RouterModule } from '@angular/router';
 import { AdvertisePageComponent } from './advertise-page/advertise-page.component';
+import { BusinessRegisterSuccessPageComponent } from './business-register-success-page/business-register-success-page.component';
+import { ModalFormComponent } from './modal-form/modal-form.component';
 // import { AdvancedsearchComponent } from './advancedsearch/advancedsearch.component';
 
 @NgModule({
@@ -91,6 +93,8 @@ import { AdvertisePageComponent } from './advertise-page/advertise-page.componen
     AdvancedSearchComponent,
     PackagesComponent,
     AdvertisePageComponent,
+    BusinessRegisterSuccessPageComponent,
+    ModalFormComponent,
 
 
 
@@ -102,7 +106,7 @@ import { AdvertisePageComponent } from './advertise-page/advertise-page.componen
     ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
 
   ],
   exports: [RouterModule],
